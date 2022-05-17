@@ -13,5 +13,15 @@ namespace ConsoleTestApp
 {
     internal class AbelsGlobalUsings
     {
+
+        [Obsolete("Lol")]
+        private void
+            Something()
+        { }
+
+        private void SomethingElse()
+        {
+            Something();
+        }
     }
 }
