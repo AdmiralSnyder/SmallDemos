@@ -1,34 +1,21 @@
-﻿<Window
-    x:Class="WpfGraphControl.PizzaWindow"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:WpfGraphControl"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="PizzaWindow"
-    Width="800"
-    Height="450"
-    mc:Ignorable="d">
+﻿<Window x:Class="WpfGraphControl.PizzaWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:WpfGraphControl"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" Title="PizzaWindow"
+        Width="800" Height="450" mc:Ignorable="d">
     <StackPanel>
-        <CheckBox x:Name="SalamiCB" Tag="3">Salami</CheckBox>
+        <RadioButton x:Name="SalamiCB" Tag="3">Salami</RadioButton>
         <CheckBox x:Name="TunaCB" Tag="5">Tuna</CheckBox>
         <CheckBox x:Name="CheeseCB" Tag="2">Moooore Cheeeze</CheckBox>
-        <RadioButton
-            x:Name="BigRB"
-            GroupName="One"
-            Tag="10">
+        <RadioButton x:Name="BigRB" GroupName="One" Tag="10">
             Big
         </RadioButton>
-        <RadioButton
-            x:Name="BiggerRB"
-            GroupName="Two"
-            Tag="15">
+        <RadioButton x:Name="BiggerRB" GroupName="Two" Tag="15">
             Bigger
         </RadioButton>
-        <RadioButton
-            x:Name="HungryRB"
-            GroupName="One"
-            Tag="20">
+        <RadioButton x:Name="HungryRB" GroupName="One" Tag="20">
             Hungry
         </RadioButton>
         <Button />
