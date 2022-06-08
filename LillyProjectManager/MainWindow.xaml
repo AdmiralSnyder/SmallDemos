@@ -3,18 +3,31 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:LillyProjectManager"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" Title="Alphalilly's best launcher ever"
-        Width="800" Height="450" mc:Ignorable="d">
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Title="Alphalilly's best launcher ever" Width="800" Height="450"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        mc:Ignorable="d">
+    <Window.Resources>
+        <local:ToolList x:Key="Tools">
+            <local:Tool Name="mspaint" Command="mspaint" CommandType="WindowsStoreApp" Icon=".\mockup.png" />
+            <local:Tool Name="notepad" Command="%windir%\notepad.exe" CommandType="Executable" Icon="mockup.png" />
+        </local:ToolList>
+        <local:ProjectList x:Key="Projects">
+            <local:Project Name="Robot project" />
+            <local:Project Name="Anything 1" />
+            <local:Project Name="Anything 2" />
+        </local:ProjectList>
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"/>
-            <ColumnDefinition Width="140"/>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="140" />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
-            <RowDefinition/>
-            <RowDefinition Height="100"/>
+            <RowDefinition Height="30" />
+            <RowDefinition />
+            <RowDefinition Height="100" />
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="23">
             Projects
@@ -22,37 +35,35 @@
         <TextBlock Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="23">
             Apps
         </TextBlock>
-        <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="23">
-            This is the log...
-        </TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Left" VerticalAlignment="Top"
+                   FontSize="18"
+                   Text="{Binding LogText, Mode=TwoWay}" />
 
-        <StackPanel Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
-            <Button Content="Start"/>
+        <StackPanel Grid.Row="0" Grid.RowSpan="2" Grid.Column="1">
+            <Button Content="Start" Click="Button_Click" />
         </StackPanel>
-        <ListBox Grid.Row="1" Grid.Column="0">
-            <ListBoxItem>
-                Robot project
-            </ListBoxItem>
-            <ListBoxItem>
-                Anything 1
-            </ListBoxItem>
-            <ListBoxItem>
-                Anything 2
-            </ListBoxItem>
+        <ListBox Grid.Row="1" Grid.Column="0"
+                 ItemsSource="{StaticResource Projects}"
+                 SelectedItem="{Binding SelectedProject}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
         </ListBox>
-        <ListView Grid.Row="1" Grid.Column="2">
+        <ListView Grid.Row="1" Grid.Column="2"
+                  ItemsSource="{StaticResource Tools}"
+                  SelectedItem="{Binding SelectedTool}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock>Hello</TextBlock>
+                    <WrapPanel Orientation="Horizontal">
+                        <Image Width="100" Height="100"
+                               Source="{Binding IconPath}" />
+                        <TextBlock Height="30" Margin="10,0,0,0"
+                                   Text="{Binding Name}" />
+                    </WrapPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
-            <ListViewItem>
-                mspaint
-            </ListViewItem>
-            <ListViewItem>
-                notepad
-            </ListViewItem>
         </ListView>
-
     </Grid>
 </Window>
