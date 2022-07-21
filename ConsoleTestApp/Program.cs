@@ -1,6 +1,10 @@
 ﻿global      using      System.Linq;
 global    using System;
 
+using ConsoleTestApp;
+
+new RockPaperScissorsGame().Play(); return;
+
 // See https://aka.ms/new-console-template for more information
 Console.WriteLine("Hello, World!");
 
