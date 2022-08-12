@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaDemo", "PizzaDemo\Pizz
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlgorithmSamples", "AlgorithmSamples\AlgorithmSamples.csproj", "{D48F0754-DBCD-4388-995D-382A8DD6146D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LillyProjectManager", "LillyProjectManager\LillyProjectManager.csproj", "{2B4FF085-96EF-4B7D-AC2B-F897DF336361}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LillyProjectManager", "LillyProjectManager\LillyProjectManager.csproj", "{2B4FF085-96EF-4B7D-AC2B-F897DF336361}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoWinFormsApp", "DemoWinFormsApp\DemoWinFormsApp.csproj", "{9F5DA9D9-E025-4B82-86D0-5BA961D5D471}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{2B4FF085-96EF-4B7D-AC2B-F897DF336361}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B4FF085-96EF-4B7D-AC2B-F897DF336361}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B4FF085-96EF-4B7D-AC2B-F897DF336361}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F5DA9D9-E025-4B82-86D0-5BA961D5D471}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F5DA9D9-E025-4B82-86D0-5BA961D5D471}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F5DA9D9-E025-4B82-86D0-5BA961D5D471}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F5DA9D9-E025-4B82-86D0-5BA961D5D471}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
