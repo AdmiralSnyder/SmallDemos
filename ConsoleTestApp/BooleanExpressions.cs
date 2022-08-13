@@ -15,8 +15,24 @@ expression = literal | conjunction | disjunction
 conjunction = expression "&&" expression
 disjunction = expression "||" expression
 
-         
-         
+
+(true || false) && (false || true)
+
+expression
+  conjunction
+    disjunction
+      true
+      false
+    disjunction
+      false
+      true
+
+
+
+
+step 1 get formula   (A || B) && (C || D) 
+step 2 get values    A = true, B = false, C = false, D = true    <--- calculating these so that the formula is true  is called  SAT (saturation problem), very hard
+step 3 evaluates to true?   <-- easy
          */
 
         abstract class Expression
