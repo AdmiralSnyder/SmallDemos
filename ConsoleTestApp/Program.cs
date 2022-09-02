@@ -16,6 +16,13 @@ var someDictionary = new Dictionary<int, string>
 { [1] = someString };
 
 
+var numbers = new[] { 3, 5, 9, 7 };
+
+foreach (var number in numbers)
+{
+    Console.WriteLine(number);
+}
+
 
 
 var count = 17;
